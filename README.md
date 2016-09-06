@@ -1,7 +1,7 @@
 # Rails-Ruby-Redis (3R) with GitHub on CentOS 7
-### Rails version 5.0.0.1
-### Ruby version 2.3.0
-### Redis version 2.8.19
+- Rails version 5.0.0.1
+- Ruby version 2.3.0
+- Redis version 2.8.19
 
 ## Software Installation and Setup
 ### Redis
@@ -40,8 +40,9 @@
 
 ## Creating First Ruby-Rails Application
 - cd into working directory to create a new application in new folder Ruby-Rails-Redis
+- for example, cd /home/someuser/Program
 - rails new Ruby-Rails-Redis
-- cd Ruby-Rails-Redis
+- cd Ruby-Rails-Redis (/home/someuser/Program/Ruby-Rails-Redis)
 - su -c "/usr/local/bin/bundle install"
 - bundle show
 - /usr/local/bin/bundler update
@@ -51,8 +52,8 @@
 - cd Ruby-Rails-Redis
 - Create file ./config/initializers/redis.rb and add the following line:
   $redis = Redis.new(:host => 'localhost', :port => 6379)
-- Update file Gemfile
-  Add line:  gem 'redis'
+- Update file Gemfile and add the following line: 
+  gem 'redis'
 - su -c "gem install redis"
 - su -c "gem install redis-namespace"
 - su -c "service redis restart"
@@ -68,7 +69,7 @@
 
 
 
-## Login into GitHub
+## Log into GitHub
 - Create GitHub repository, for example, Ruby-Rails-Redis
 - https://github.com/lancenle/Ruby-Rails-Redis.git (replace lancenle with your user name)
 
@@ -118,10 +119,15 @@ On Local Server after creating GitHub repository
 
 ### Push to GitHub (with private key stored in ~/.ssh/githubprivatekey.pem)
 - git remote add origin git@github.com/lancenle/Ruby-Rails-Redis.git
-- ssh -i ~/.ssh/githubprivatekey.pem git@github.com "git push -u origin master"
+- ssh -i ~/.ssh/githubprivatekey.pem git@github.com "git push -u origin master" (may need to use a wrapper script or update ~/.ssh/config)
 
 
 ### Update between HTTPS and SSH pushes
 - git remote -v
 - git remote set-url origin git@github.com:lancenle/Ruby-Rails-Redis.git
 - git remote set-url origin https://github.com/lancenle/Ruby-Rails-Redis.git
+
+
+### Update GitHub
+- git commit -a
+
